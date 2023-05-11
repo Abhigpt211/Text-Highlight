@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Highlight</title>
+    <style>
+        button{
+            margin-top: 20%;
+            margin-left: 40%;
+            padding: 5px;
+            background-color: rgba(108, 108, 143, 0.713);
+        }
+
+        body{
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <p id="paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam dignissimos eaque molestias necessitatibus cum quibusdam, ab aperiam officia deleniti itaque!</p>
+    <button  id="highlight-button">Highlight Words</button>
+
+    <script>
+    const highlightButton = document.querySelector("#highlight-button");
+    const paragraph = document.querySelector("#paragraph");
+    
+    highlightButton.addEventListener('click', function(){
+
+        const words = paragraph.textContent.split(" ");
+
+        for(let i=0; i<words.length; i++){
+         if(words[i].length>8) {
+          words[i] = "<span style='background-color:yellow'>"  + words[i] + "</span>"
+         } 
+        }
+
+        paragraph.innerHTML= words.join(" ")
+
+
+
+    })
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
